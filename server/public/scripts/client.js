@@ -27,6 +27,7 @@ function onReady() {
       console.log(error);
       alert("Something bad happened! Check the console for more details.");
     });
+
   axios({
     method: "GET",
     url: "/song",
@@ -43,7 +44,7 @@ function onReady() {
         </tr>
         `;
       }
-      s;
+      ;
     })
     .catch(function (error) {
       console.log(error);
