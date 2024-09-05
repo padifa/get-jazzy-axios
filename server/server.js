@@ -60,6 +60,16 @@ app.get('/song', (req,res) => {
     res.send(songListArray);
 })
 
+app.post('/artist', (req, res) => {
+    console.log(req.body);
+if (req.body.name && req.body.born && req.body.died) {
+        artistListArray.push(req.body);
+        res.sendStatus(201);
+    } else {
+        res.status(400).send('Oops! Quote objects should have `name` and `born` and `died` keys');
+    }
+})
+
 app.listen(PORT, () => {
     console.log('listening on port', PORT)
 });
