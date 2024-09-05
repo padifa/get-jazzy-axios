@@ -45,13 +45,20 @@ const songListArray = [
     },
 ];
 
+//the app.use is express middleware
 app.use(express.static('server/public'));
+// this line here is ONLY needed for handling POST requests (not GET)
+app.use(express.json()); // turns on req.body for POST requests
 
 app.get('/artist', (req, res) => {
     res.send(artistListArray);
 });
 
 // TODO - Add GET for songs
+app.get('/song', (req,res) => {
+    console.log('Get/ song is being handled');
+    res.send(songListArray);
+})
 
 app.listen(PORT, () => {
     console.log('listening on port', PORT)
