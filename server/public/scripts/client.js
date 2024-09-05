@@ -26,7 +26,27 @@ function onReady() {
             console.log(error);
             alert('Something bad happened! Check the console for more details.')
         });
-
+axios({
+    method: 'GET',
+    url: '/song'  
+})
+.then(function (response) {
+    console.log(response);
+    let songFromServer = response.data;
+    let contentDiv = document.querySelector('#songTableBody');
+    for (let song of songFromServer) {
+        contentDiv.innerHTML += `
+        <tr>
+        <td>${song.title}</td>
+        <td>${song.artist}</td>
+        </tr>
+        `;
+    }s
+}).catch(function (error) {
+    console.log(error);
+    alert('something bad had happened! Check the console for more details')
+});
+        
     // TODO Add Axios request for /songs and display on DOM
 }
 
