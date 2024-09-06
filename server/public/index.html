@@ -1,43 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Get Jazzy</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
     <script defer src="scripts/client.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Get Jazzy</h1>
 
     <h2>Famous Jazz Artists</h2>
     <form onSubmit="addArtist(event)">
-    <input id="artist-name" required/>
-    <input id="artist-born" required/>
-    <input id="artist-died" required/>
-    <button id="submit-button" type="submit"> Add Artist</button>
+      <input id="artist-name" required />
+      <input id="artist-born" required />
+      <input id="artist-died" required />
+      <button id="submit-button" type="submit">Add Artist</button>
     </form>
     <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Born</th>
-                <th>Died</th>
-            </tr>
-        </thead>
-        <tbody id="artistTableBody"></tbody>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Born</th>
+          <th>Died</th>
+        </tr>
+      </thead>
+      <tbody id="artistTableBody"></tbody>
     </table>
 
     <h2>Famous Jazz Songs</h2>
+    <form onsubmit="addSong(event)">
+        <input id="song-title" required />
+        <input id="song-artist" required />
+        <button id="submit-button" type="submit">Add Song</button>
+    </form>
     <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Artist</th>
-            </tr>
-        </thead>
-        <tbody id="songTableBody"></tbody>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Artist</th>
+        </tr>
+      </thead>
+      <tbody id="songTableBody"></tbody>
     </table>
-</body>
+  </body>
 </html>
